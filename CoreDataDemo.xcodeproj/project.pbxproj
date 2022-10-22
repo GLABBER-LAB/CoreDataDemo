@@ -14,6 +14,8 @@
 		BBFBBFE229044E37003818A0 /* CoreDataDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BBFBBFE029044E37003818A0 /* CoreDataDemo.xcdatamodeld */; };
 		BBFBBFE429044E38003818A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBFBBFE329044E38003818A0 /* Assets.xcassets */; };
 		BBFBBFE729044E38003818A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBFBBFE529044E38003818A0 /* LaunchScreen.storyboard */; };
+		BBFBBFF0290483C0003818A0 /* Person+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFBBFEE290483C0003818A0 /* Person+CoreDataClass.swift */; };
+		BBFBBFF1290483C0003818A0 /* Person+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFBBFEF290483C0003818A0 /* Person+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		BBFBBFE329044E38003818A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BBFBBFE629044E38003818A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BBFBBFE829044E38003818A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BBFBBFEE290483C0003818A0 /* Person+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BBFBBFEF290483C0003818A0 /* Person+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +46,8 @@
 		BBFBBFCB29044E37003818A0 = {
 			isa = PBXGroup;
 			children = (
+				BBFBBFEE290483C0003818A0 /* Person+CoreDataClass.swift */,
+				BBFBBFEF290483C0003818A0 /* Person+CoreDataProperties.swift */,
 				BBFBBFD629044E37003818A0 /* CoreDataDemo */,
 				BBFBBFD529044E37003818A0 /* Products */,
 			);
@@ -143,6 +149,8 @@
 			files = (
 				BBFBBFDC29044E37003818A0 /* ViewController.swift in Sources */,
 				BBFBBFE229044E37003818A0 /* CoreDataDemo.xcdatamodeld in Sources */,
+				BBFBBFF1290483C0003818A0 /* Person+CoreDataProperties.swift in Sources */,
+				BBFBBFF0290483C0003818A0 /* Person+CoreDataClass.swift in Sources */,
 				BBFBBFD829044E37003818A0 /* AppDelegate.swift in Sources */,
 				BBFBBFDA29044E37003818A0 /* SceneDelegate.swift in Sources */,
 			);
