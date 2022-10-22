@@ -9,7 +9,7 @@ import UIKit
 import CoreData
 
 class ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,8 +26,8 @@ class ViewController: UIViewController {
         let managedObject = NSManagedObject(entity: entityDescription!, insertInto: context)
         
         // Установка значений атрибутов
-        managedObject.setValue("Вася", forKey: "name")
-        managedObject.setValue(18, forKey: "age")
+        managedObject.setValue("Петя", forKey: "name")
+        managedObject.setValue(28, forKey: "age")
         
         // Извлекаем значение атрибута
         let name = managedObject.value(forKey: "name")
@@ -41,9 +41,21 @@ class ViewController: UIViewController {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Person")
         do {
             let results = try context.fetch(fetchRequest)
+            for result in results as! [NSManagedObject]{
+                print("name - \(result.value(forKey: "name")!), age - \(result.value(forKey: "age")!)")
+            }
+        } catch {
+            print(error)
+        }
+        
+        // Удаление ВСЕХ записей
+        do {
+            let results = try context.fetch(fetchRequest)
+            for result in results as! [NSManagedObject]{
+                context.delete(result)
+            }
         } catch {
             print(error)
         }
     }
 }
-
