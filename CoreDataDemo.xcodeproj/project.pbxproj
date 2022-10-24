@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB7E3E6929070DFC00A934E9 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7E3E6829070DFC00A934E9 /* AddViewController.swift */; };
 		BB8AA0F52905952D00706E88 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8AA0F42905952D00706E88 /* CoreDataManager.swift */; };
+		BB8AA0FA2905AF7800706E88 /* MyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8AA0F92905AF7800706E88 /* MyTableViewController.swift */; };
 		BBFBBFD829044E37003818A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFBBFD729044E37003818A0 /* AppDelegate.swift */; };
 		BBFBBFDA29044E37003818A0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFBBFD929044E37003818A0 /* SceneDelegate.swift */; };
 		BBFBBFDC29044E37003818A0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFBBFDB29044E37003818A0 /* ViewController.swift */; };
@@ -20,7 +22,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BB7E3E6829070DFC00A934E9 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		BB8AA0F42905952D00706E88 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		BB8AA0F92905AF7800706E88 /* MyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableViewController.swift; sourceTree = "<group>"; };
 		BBFBBFD429044E37003818A0 /* CoreDataDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBFBBFD729044E37003818A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BBFBBFD929044E37003818A0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -97,6 +101,8 @@
 				BB8AA0F62905955D00706E88 /* Model */,
 				BBFBBFDB29044E37003818A0 /* ViewController.swift */,
 				BBFBBFDD29044E37003818A0 /* Main.storyboard */,
+				BB7E3E6829070DFC00A934E9 /* AddViewController.swift */,
+				BB8AA0F92905AF7800706E88 /* MyTableViewController.swift */,
 				BB8AA0F82905A7CA00706E88 /* Supporting Files */,
 				BBFBBFE829044E38003818A0 /* Info.plist */,
 			);
@@ -176,7 +182,9 @@
 			files = (
 				BBFBBFDC29044E37003818A0 /* ViewController.swift in Sources */,
 				BBFBBFE229044E37003818A0 /* CoreDataDemo.xcdatamodeld in Sources */,
+				BB7E3E6929070DFC00A934E9 /* AddViewController.swift in Sources */,
 				BBFBBFF1290483C0003818A0 /* Person+CoreDataProperties.swift in Sources */,
+				BB8AA0FA2905AF7800706E88 /* MyTableViewController.swift in Sources */,
 				BBFBBFF0290483C0003818A0 /* Person+CoreDataClass.swift in Sources */,
 				BBFBBFD829044E37003818A0 /* AppDelegate.swift in Sources */,
 				BB8AA0F52905952D00706E88 /* CoreDataManager.swift in Sources */,
