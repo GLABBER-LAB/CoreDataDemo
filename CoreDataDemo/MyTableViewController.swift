@@ -27,6 +27,8 @@ class MyTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        fetchResultController.delegate = self
+        
         do {
             try fetchResultController.performFetch()
         } catch {
@@ -105,4 +107,47 @@ class MyTableViewController: UITableViewController {
     }
     */
 
+}
+extension MyTableViewController: NSFetchedResultsControllerDelegate {
+    
+    // Информирует о начале изменений данных
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.beginUpdates()
+    }
+    
+    //
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        switch type {
+        case .insert:
+            if let indexPath = newIndexPath {
+                tableView.insertRows(at: [indexPath], with: .automatic)
+            }
+        case .update:
+            if let indexPath = indexPath {
+                let person = fetchResultController.object(at: indexPath) as! Person
+                let cell = tableView.cellForRow(at: indexPath)
+                cell?.textLabel?.text = person.name
+                cell?.detailTextLabel?.text = String(person.age)
+            }
+        case .move:
+            if let indexPath = indexPath {
+                tableView.deleteRows(at: [indexPath], with: .automatic)
+            }
+            if let indexPath = newIndexPath {
+                tableView.insertRows(at: [indexPath], with: .automatic)
+            }
+        case .delete:
+            if let indexPath = indexPath {
+                tableView.deleteRows(at: [indexPath], with: .automatic)
+            }
+        
+        default:
+            break
+        }
+    }
+    
+    // Информирует о окончании изменения данных
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.endUpdates()
+    }
 }
