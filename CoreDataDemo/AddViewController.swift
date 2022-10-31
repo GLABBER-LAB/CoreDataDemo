@@ -24,6 +24,12 @@ class AddViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Чтение объекта
+        if let person = person {
+            nameTextField.text = person.name
+            ageTextField.text = String(person.age)
+        }
 
     }
     
