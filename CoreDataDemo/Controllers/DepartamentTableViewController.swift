@@ -1,30 +1,24 @@
 //
-//  MyTableViewController.swift
+//  DepartamentTableViewController.swift
 //  CoreDataDemo
 //
-//  Created by GLABBER on 23.10.2022.
+//  Created by GLABBER on 13.11.2022.
 //
 
 import UIKit
 import CoreData
 
-class MyTableViewController: UITableViewController {
+class DepartamentTableViewController: UITableViewController {
     
     struct Constants {
-        static let entity = "Person"
-        static let sortName = "name"
-        static let cellName = "Cell"
-        static let identifier = "tableInAddVC"
+        static let entity = "Departament"
+        static let sortName = "nameDep"
+        static let cellName = "CellDep"
+        static let identifier = "DepInAdd"
     }
     
-    var fetchResultController: NSFetchedResultsController<NSFetchRequestResult> = {
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: Constants.entity)
-        let sortDescriptor = NSSortDescriptor(key: Constants.sortName, ascending: true)
-        fetchRequest.sortDescriptors = [sortDescriptor]
-        let fetchedResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreDataManager.instance.context, sectionNameKeyPath: nil, cacheName: nil)
-        return fetchedResultController
-    }()
-
+    var fetchResultController = CoreDataManager.instance.fetchResultController(entityName: Constants.entity, sortName: Constants.sortName)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -42,13 +36,13 @@ class MyTableViewController: UITableViewController {
         // Сделаем заголовки большими
         navigationController?.navigationBar.prefersLargeTitles = true
     }
-
+    
     // MARK: - Table view data source
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return fetchResultController.sections?.count ?? 0
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let sections = fetchResultController.sections {
             return sections[section].numberOfObjects
@@ -57,64 +51,48 @@ class MyTableViewController: UITableViewController {
         }
         
     }
-
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellName, for: indexPath)
-        let person = fetchResultController.object(at: indexPath) as! Person
-        cell.textLabel?.text = person.name
-        cell.detailTextLabel?.text = String(person.age)
-
+        let departament = fetchResultController.object(at: indexPath) as! Departament
+        
+        cell.textLabel?.text = departament.nameDep
+        
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let person = fetchResultController.object(at: indexPath) as! Person
-        performSegue(withIdentifier: Constants.identifier, sender: person)
+        let departament = fetchResultController.object(at: indexPath) as! Departament
+        performSegue(withIdentifier: Constants.identifier, sender: departament)
     }
-
+    
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
     }
-
+    
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            let person = fetchResultController.object(at: indexPath) as! Person
-            CoreDataManager.instance.context.delete(person)
+            let departament = fetchResultController.object(at: indexPath) as! Departament
+            CoreDataManager.instance.context.delete(departament)
             CoreDataManager.instance.saveContext()
         }
     }
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
     
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Constants.identifier {
-            let controller = segue.destination as! AddViewController
-            controller.person = sender as? Person
+            let controller = segue.destination as! AddDepViewController
+            controller.departament = sender as? Departament
         }
     }
-
+    
 }
-extension MyTableViewController: NSFetchedResultsControllerDelegate {
+extension DepartamentTableViewController: NSFetchedResultsControllerDelegate {
     
     // Информирует о начале изменений данных
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
@@ -130,10 +108,9 @@ extension MyTableViewController: NSFetchedResultsControllerDelegate {
             }
         case .update:
             if let indexPath = indexPath {
-                let person = fetchResultController.object(at: indexPath) as! Person
+                let departament = fetchResultController.object(at: indexPath) as! Departament
                 let cell = tableView.cellForRow(at: indexPath)
-                cell?.textLabel?.text = person.name
-                cell?.detailTextLabel?.text = String(person.age)
+                cell?.textLabel?.text = departament.nameDep
             }
         case .move:
             if let indexPath = indexPath {
@@ -146,7 +123,7 @@ extension MyTableViewController: NSFetchedResultsControllerDelegate {
             if let indexPath = indexPath {
                 tableView.deleteRows(at: [indexPath], with: .automatic)
             }
-        
+            
         default:
             break
         }

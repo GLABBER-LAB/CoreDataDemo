@@ -21,6 +21,7 @@ class AddViewController: UIViewController {
     }
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var ageTextField: UITextField!
+    @IBOutlet weak var departamentTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,13 +30,13 @@ class AddViewController: UIViewController {
         if let person = person {
             nameTextField.text = person.name
             ageTextField.text = String(person.age)
+            departamentTextField.text = person.departament
         }
-
     }
     
     func savePerson() -> Bool {
         if nameTextField.text!.isEmpty {
-            let alert = UIAlertController(title: "Ошибка ввода", message: "Вы не заполнили поле Фамилия - сохранение невозможно", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Ошибка ввода", message: "Вы не заполнили все поля - сохранение невозможно", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
             present(alert, animated: true, completion: nil)
             return false
@@ -50,8 +51,10 @@ class AddViewController: UIViewController {
         if let person = person {
             person.name = nameTextField.text
             person.age = Int16(ageTextField.text!)!
+            person.departament = departamentTextField.text
             CoreDataManager.instance.saveContext()
         }
         return true
     }
 }
+
