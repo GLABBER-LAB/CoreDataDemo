@@ -24,7 +24,7 @@ class ViewController: UIViewController {
         let name = managedObject.name
         let age = managedObject.age
         
-        print("\(name), \(age)")
+        print("\(String(describing: name)), \(age)")
         
         // Сохранение данных
         CoreDataManager.instance.saveContext()

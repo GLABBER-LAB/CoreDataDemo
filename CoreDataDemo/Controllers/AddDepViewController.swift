@@ -47,8 +47,8 @@ class AddDepViewController: UIViewController {
         }
         
         // Сохранить объект
-        if let departament = departament {
-            departament.nameDep = departamentTextField.text
+        if let depart = departament {
+            depart.nameDep = departamentTextField.text
             CoreDataManager.instance.saveContext()
         }
         return true

@@ -96,7 +96,7 @@
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Lic-pJ-6rA">
                                             <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -148,14 +148,14 @@
                                 </items>
                             </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Отдел" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JTA-Bv-Nxm">
-                                <rect key="frame" x="20" y="103" width="62" height="35"/>
+                                <rect key="frame" x="20" y="103" width="49.5" height="20.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d5a-a5-s4u">
-                                <rect key="frame" x="106" y="103" width="270" height="34"/>
+                                <rect key="frame" x="93.5" y="96.5" width="282.5" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -251,11 +251,11 @@
             </objects>
             <point key="canvasLocation" x="2402.898550724638" y="198.88392857142856"/>
         </scene>
-        <!--Item-->
+        <!--Список персонала-->
         <scene sceneID="N1c-xu-Npi">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dhT-MF-CAH" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="6mv-bN-Euu"/>
+                    <tabBarItem key="tabBarItem" title="Список персонала" image="person.2.fill" catalog="system" id="6mv-bN-Euu"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="vr4-JL-Wph">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -270,11 +270,11 @@
             </objects>
             <point key="canvasLocation" x="966.66666666666674" y="198.88392857142856"/>
         </scene>
-        <!--Item-->
+        <!--Список отделов-->
         <scene sceneID="Tme-Zw-rIg">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TKV-uI-0ik" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="n1Z-4F-0oj"/>
+                    <tabBarItem key="tabBarItem" title="Список отделов" image="book" catalog="system" id="n1Z-4F-0oj"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="pQ0-aO-LKD">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -291,6 +291,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="book" catalog="system" width="128" height="99"/>
+        <image name="person.2.fill" catalog="system" width="128" height="80"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

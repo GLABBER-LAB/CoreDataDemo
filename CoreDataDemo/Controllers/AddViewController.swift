@@ -6,8 +6,16 @@
 //
 
 import UIKit
+import CoreData
 
 class AddViewController: UIViewController {
+    
+    struct Constants {
+        static let entity = "Departament"
+        static let sortNameDep = "nameDep"
+    }
+    
+    var fetchResultController = CoreDataManager.instance.fetchResultController(entityName: Constants.entity, sortName: Constants.sortNameDep)
     
     var person: Person?
     
@@ -21,7 +29,43 @@ class AddViewController: UIViewController {
     }
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var ageTextField: UITextField!
-    @IBOutlet weak var departamentTextField: UITextField!
+    @IBOutlet weak var departamentTextField: UITextField! {
+        didSet {
+            departamentTextField.inputView = UIView(frame: .zero)
+            departamentTextField.addTarget(self, action: #selector(editingDep), for: .editingDidBegin)
+        }
+    }
+    
+    @objc func editingDep() {
+        let alert = UIAlertController(title: "Выберите отдел", message: nil, preferredStyle: .actionSheet)
+        let numberDepartament = fetchResultController.sections![0].numberOfObjects
+        
+        if numberDepartament != 0 {
+            for item in 0...numberDepartament - 1 {
+                let departement = fetchResultController.object(at: [0, item]) as! Departament
+                alert.addAction((UIAlertAction(title: departement.nameDep, style: .default, handler: { [unowned self] _ in
+                    self.textDep = departement.nameDep!
+                    departamentTextField.resignFirstResponder()
+                })))
+            }
+        } else {
+            alert.addAction(UIAlertAction(title: "?", style: .default, handler: { [unowned self] _ in
+                self.textDep = ""
+                departamentTextField.resignFirstResponder()
+            }))
+        }
+        
+        alert.addAction(UIAlertAction(title: "Возврат", style: .cancel, handler: { [unowned self] _ in
+            departamentTextField.resignFirstResponder()
+        }))
+        present(alert, animated: true, completion: nil)
+    }
+    
+    var textDep: String? {
+        didSet {
+            departamentTextField.text = textDep
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +75,12 @@ class AddViewController: UIViewController {
             nameTextField.text = person.name
             ageTextField.text = String(person.age)
             departamentTextField.text = person.departament
+        }
+        
+        do {
+            try fetchResultController.performFetch()
+        } catch {
+            print(error)
         }
     }
     
