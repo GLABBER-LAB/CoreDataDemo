@@ -29,6 +29,7 @@ class AddViewController: UIViewController {
     }
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var ageTextField: UITextField!
+    @IBOutlet weak var commentsTextField: UITextField!
     @IBOutlet weak var departamentTextField: UITextField! {
         didSet {
             departamentTextField.inputView = UIView(frame: .zero)
@@ -67,6 +68,8 @@ class AddViewController: UIViewController {
         }
     }
     
+// MARK: - Методы жизненного цикла
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -75,6 +78,8 @@ class AddViewController: UIViewController {
             nameTextField.text = person.name
             ageTextField.text = String(person.age)
             departamentTextField.text = person.departament
+            commentsTextField.text = person.person?.comments
+            
         }
         
         do {
@@ -102,6 +107,12 @@ class AddViewController: UIViewController {
             person.name = nameTextField.text
             person.age = Int16(ageTextField.text!)!
             person.departament = departamentTextField.text
+            
+            let comment = Comments()
+            comment.comments = commentsTextField.text
+            
+            person.person = comment
+            
             CoreDataManager.instance.saveContext()
         }
         return true

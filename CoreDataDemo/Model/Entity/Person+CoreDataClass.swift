@@ -2,7 +2,7 @@
 //  Person+CoreDataClass.swift
 //  CoreDataDemo
 //
-//  Created by GLABBER on 13.11.2022.
+//  Created by GLABBER on 20.11.2022.
 //
 //
 

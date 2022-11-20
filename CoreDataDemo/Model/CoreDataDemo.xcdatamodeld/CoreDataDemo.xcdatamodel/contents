@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21F79" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Comments" representedClassName="Comments" syncable="YES">
+        <attribute name="comments" optional="YES" attributeType="String"/>
+        <relationship name="comment" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Person" inverseName="person" inverseEntity="Person"/>
+    </entity>
     <entity name="Departament" representedClassName="Departament" syncable="YES">
         <attribute name="nameDep" optional="YES" attributeType="String"/>
     </entity>
@@ -7,9 +11,11 @@
         <attribute name="age" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="departament" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="person" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Comments" inverseName="comment" inverseEntity="Comments"/>
     </entity>
     <elements>
-        <element name="Person" positionX="-63" positionY="-18" width="128" height="74"/>
-        <element name="Departament" positionX="137.460205078125" positionY="-2.488128662109375" width="128" height="58"/>
+        <element name="Comments" positionX="226.913330078125" positionY="174.8787231445312" width="128" height="73"/>
+        <element name="Departament" positionX="183.7904052734375" positionY="8.33099365234375" width="128" height="44"/>
+        <element name="Person" positionX="-63" positionY="-18" width="128" height="103"/>
     </elements>
 </model>

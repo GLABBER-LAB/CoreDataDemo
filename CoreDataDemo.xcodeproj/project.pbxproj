@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB72B5B4292AAA30009DB62C /* Departament+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB72B5AE292AAA30009DB62C /* Departament+CoreDataClass.swift */; };
+		BB72B5B5292AAA30009DB62C /* Departament+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB72B5AF292AAA30009DB62C /* Departament+CoreDataProperties.swift */; };
+		BB72B5B6292AAA30009DB62C /* Comments+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB72B5B0292AAA30009DB62C /* Comments+CoreDataClass.swift */; };
+		BB72B5B7292AAA30009DB62C /* Comments+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB72B5B1292AAA30009DB62C /* Comments+CoreDataProperties.swift */; };
+		BB72B5B8292AAA30009DB62C /* Person+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB72B5B2292AAA30009DB62C /* Person+CoreDataClass.swift */; };
+		BB72B5B9292AAA30009DB62C /* Person+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB72B5B3292AAA30009DB62C /* Person+CoreDataProperties.swift */; };
 		BB7E3E6929070DFC00A934E9 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7E3E6829070DFC00A934E9 /* AddViewController.swift */; };
-		BB80435129210E5300CF09E5 /* Person+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB80434F29210E5300CF09E5 /* Person+CoreDataClass.swift */; };
-		BB80435229210E5300CF09E5 /* Person+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB80435029210E5300CF09E5 /* Person+CoreDataProperties.swift */; };
-		BB80435529212ADE00CF09E5 /* Departament+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB80435329212ADE00CF09E5 /* Departament+CoreDataClass.swift */; };
-		BB80435629212ADE00CF09E5 /* Departament+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB80435429212ADE00CF09E5 /* Departament+CoreDataProperties.swift */; };
 		BB8043582921412F00CF09E5 /* AddDepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8043572921412F00CF09E5 /* AddDepViewController.swift */; };
 		BB80435A2921419800CF09E5 /* DepartamentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8043592921419800CF09E5 /* DepartamentTableViewController.swift */; };
 		BB8AA0F52905952D00706E88 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8AA0F42905952D00706E88 /* CoreDataManager.swift */; };
@@ -26,11 +28,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BB72B5AE292AAA30009DB62C /* Departament+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Departament+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BB72B5AF292AAA30009DB62C /* Departament+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Departament+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BB72B5B0292AAA30009DB62C /* Comments+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Comments+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BB72B5B1292AAA30009DB62C /* Comments+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Comments+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BB72B5B2292AAA30009DB62C /* Person+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BB72B5B3292AAA30009DB62C /* Person+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BB7E3E6829070DFC00A934E9 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
-		BB80434F29210E5300CF09E5 /* Person+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataClass.swift"; sourceTree = "<group>"; };
-		BB80435029210E5300CF09E5 /* Person+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		BB80435329212ADE00CF09E5 /* Departament+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Departament+CoreDataClass.swift"; sourceTree = "<group>"; };
-		BB80435429212ADE00CF09E5 /* Departament+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Departament+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BB8043572921412F00CF09E5 /* AddDepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDepViewController.swift; sourceTree = "<group>"; };
 		BB8043592921419800CF09E5 /* DepartamentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartamentTableViewController.swift; sourceTree = "<group>"; };
 		BB8AA0F42905952D00706E88 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
@@ -82,10 +86,12 @@
 		BB8AA0F72905956E00706E88 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				BB80434F29210E5300CF09E5 /* Person+CoreDataClass.swift */,
-				BB80435029210E5300CF09E5 /* Person+CoreDataProperties.swift */,
-				BB80435329212ADE00CF09E5 /* Departament+CoreDataClass.swift */,
-				BB80435429212ADE00CF09E5 /* Departament+CoreDataProperties.swift */,
+				BB72B5AE292AAA30009DB62C /* Departament+CoreDataClass.swift */,
+				BB72B5AF292AAA30009DB62C /* Departament+CoreDataProperties.swift */,
+				BB72B5B0292AAA30009DB62C /* Comments+CoreDataClass.swift */,
+				BB72B5B1292AAA30009DB62C /* Comments+CoreDataProperties.swift */,
+				BB72B5B2292AAA30009DB62C /* Person+CoreDataClass.swift */,
+				BB72B5B3292AAA30009DB62C /* Person+CoreDataProperties.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -201,17 +207,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBFBBFDC29044E37003818A0 /* ViewController.swift in Sources */,
+				BB72B5B6292AAA30009DB62C /* Comments+CoreDataClass.swift in Sources */,
 				BBFBBFE229044E37003818A0 /* CoreDataDemo.xcdatamodeld in Sources */,
 				BB8043582921412F00CF09E5 /* AddDepViewController.swift in Sources */,
-				BB80435129210E5300CF09E5 /* Person+CoreDataClass.swift in Sources */,
 				BB7E3E6929070DFC00A934E9 /* AddViewController.swift in Sources */,
+				BB72B5B5292AAA30009DB62C /* Departament+CoreDataProperties.swift in Sources */,
+				BB72B5B4292AAA30009DB62C /* Departament+CoreDataClass.swift in Sources */,
 				BB8AA0FA2905AF7800706E88 /* MyTableViewController.swift in Sources */,
-				BB80435629212ADE00CF09E5 /* Departament+CoreDataProperties.swift in Sources */,
-				BB80435529212ADE00CF09E5 /* Departament+CoreDataClass.swift in Sources */,
 				BBFBBFD829044E37003818A0 /* AppDelegate.swift in Sources */,
+				BB72B5B9292AAA30009DB62C /* Person+CoreDataProperties.swift in Sources */,
 				BB8AA0F52905952D00706E88 /* CoreDataManager.swift in Sources */,
 				BBFBBFDA29044E37003818A0 /* SceneDelegate.swift in Sources */,
-				BB80435229210E5300CF09E5 /* Person+CoreDataProperties.swift in Sources */,
+				BB72B5B8292AAA30009DB62C /* Person+CoreDataClass.swift in Sources */,
+				BB72B5B7292AAA30009DB62C /* Comments+CoreDataProperties.swift in Sources */,
 				BB80435A2921419800CF09E5 /* DepartamentTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
